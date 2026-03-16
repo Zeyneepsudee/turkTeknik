@@ -1,0 +1,9 @@
+User-agent: *
+Disallow: /admin/
+Disallow: /profil
+Disallow: /api/
+Disallow: /email/verify
+
+Allow: /
+
+Sitemap: https://turkteknik.com.tr/sitemap.xml
