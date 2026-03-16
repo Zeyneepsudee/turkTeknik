@@ -127,8 +127,8 @@
   </div>
 </template>
 
-<script setup>
-import { Link, useForm } from '@inertiajs/vue3';
+<script setup lang="ts">
+import { useForm } from '@inertiajs/vue3';
 import SEO from '@/components/SEO.vue';
 import { ref } from 'vue';
 import TopBar from '@/components/TopBar.vue';

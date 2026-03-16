@@ -100,7 +100,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
 import { useHead } from '@vueuse/head';
 import SEO from '@/components/SEO.vue';

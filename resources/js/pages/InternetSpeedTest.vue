@@ -176,7 +176,7 @@ async function measureDownload(
 
   // Paylaşılan byte/zaman sayacı
   let totalBytes = 0
-  let phaseStart = performance.now()
+  const phaseStart = performance.now()
 
   // Ticker: her 200ms'de anlık Mbps hesapla
   const ticker = setInterval(() => {
@@ -238,7 +238,7 @@ async function measureUpload(
   const signal = abortCtrl.signal
 
   let totalBytes = 0
-  let phaseStart = performance.now()
+  const phaseStart = performance.now()
   let worked = false
 
   const ticker = setInterval(() => {
@@ -257,7 +257,7 @@ async function measureUpload(
       try {
         await fetch(CF_UP, {
           method: 'POST', body: blob, cache: 'no-store', signal,
-          // @ts-ignore — duplex gerekli bazı tarayıcılarda
+          // @ts-expect-error — duplex gerekli bazı tarayıcılarda
           duplex: 'half',
         })
         const elapsed = (performance.now() - t0) / 1000
@@ -358,7 +358,7 @@ async function startTest() {
       uploadEst: estimated,
     }
 
-  } catch (e: any) {
+  } catch {
     stopPingAnim()
     animateTo(0)
     phase.value      = 'error'

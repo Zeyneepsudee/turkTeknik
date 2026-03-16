@@ -40,11 +40,11 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Link, router } from '@inertiajs/vue3';
 import AdminNavButtons from '@/components/AdminNavButtons.vue';
 
-const props = defineProps({
+defineProps({
   products: Array
 });
 

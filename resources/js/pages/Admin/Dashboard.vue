@@ -32,9 +32,9 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import AdminNavButtons from '@/components/AdminNavButtons.vue';
-const props = defineProps({
+defineProps({
   totalUsers: Number,
   totalServiceRequests: Number,
   serviceRequestsByDay: Array

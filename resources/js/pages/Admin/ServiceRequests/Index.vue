@@ -29,8 +29,8 @@
   </div>
 </template>
 
-<script setup>
-const props = defineProps({
+<script setup lang="ts">
+defineProps({
   serviceRequests: Array
 });
 import AdminNavButtons from '@/components/AdminNavButtons.vue';

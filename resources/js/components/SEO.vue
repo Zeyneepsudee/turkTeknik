@@ -16,10 +16,10 @@
   </Head>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Head } from '@vueuse/head';
 
-const props = defineProps({
+defineProps({
   title: {
     type: String,
     required: true

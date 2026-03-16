@@ -73,121 +73,14 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
 import SEO from '@/components/SEO.vue';
-const props = defineProps({
+defineProps({
   service: {
     type: Object,
     required: true
   }
 });
 
-const serviceDetails = {
-  'kamera-kurulumu': {
-    title: 'Kamera Kurulumu',
-    description: 'Güvenlik kamera sistemleri kurulumu ve bakım hizmetleri',
-    features: [
-      'IP ve analog kamera kurulumu',
-      'DVR/NVR sistem kurulumu',
-      'Uzaktan izleme sistemi kurulumu',
-      'Gece görüş kamera sistemleri',
-      'Akıllı hareket algılama sistemleri'
-    ],
-    faqs: [
-      {
-        question: 'Kamera sistemleri ne kadar sürede kurulur?',
-        answer: 'Kurulum süresi sistemin büyüklüğüne göre değişmektedir. Genellikle 1-3 saat arasında tamamlanmaktadır.'
-      },
-      {
-        question: 'Kamera sistemlerinin bakımı ne sıklıkla yapılmalıdır?',
-        answer: 'Yılda en az bir kez bakım yapılması önerilmektedir.'
-      }
-    ]
-  },
-  'ariza-hizmeti': {
-    title: 'Arıza Hizmeti',
-    description: 'Tüm elektronik cihazlar için arıza tespit ve onarım hizmetleri',
-    features: [
-      'Elektronik cihaz arıza tespiti',
-      'Yerinde onarım hizmeti',
-      'Yedek parça temini',
-      'Garanti kapsamında onarım',
-      'Teknik destek hizmeti'
-    ],
-    faqs: [
-      {
-        question: 'Arıza tespiti ücretli midir?',
-        answer: 'Evet, arıza tespiti ücretlidir. Ancak onarım yapılması durumunda tespit ücreti onarım ücretinden düşülmektedir.'
-      },
-      {
-        question: 'Garanti kapsamındaki cihazlar için onarım süresi ne kadardır?',
-        answer: 'Garanti kapsamındaki cihazlar için onarım süresi genellikle 3-5 iş günüdür.'
-      }
-    ]
-  },
-  'internet-dsl-operasyonlari': {
-    title: 'İnternet DSL Operasyonları',
-    description: 'İnternet bağlantısı kurulumu ve sorun giderme hizmetleri',
-    features: [
-      'DSL bağlantı kurulumu',
-      'Ağ altyapısı kurulumu',
-      'Wi-Fi sistem kurulumu',
-      'Hız optimizasyonu',
-      'Sorun giderme ve destek'
-    ],
-    faqs: [
-      {
-        question: 'İnternet bağlantısı ne kadar sürede kurulur?',
-        answer: 'Kurulum genellikle 1-2 saat içinde tamamlanmaktadır.'
-      },
-      {
-        question: 'Wi-Fi sinyal gücünü nasıl artırabilirim?',
-        answer: 'Wi-Fi sinyal gücünü artırmak için repeater kullanımı veya mesh sistem kurulumu önerilmektedir.'
-      }
-    ]
-  },
-  'canak-anten-ariza': {
-    title: 'Çanak Anten Arıza',
-    description: 'Uydu anten sistemleri arıza tespit ve onarım hizmetleri',
-    features: [
-      'Anten arıza tespiti',
-      'LNB değişimi',
-      'Kablo değişimi',
-      'Anten ayarlama',
-      'Sinyal güçlendirme'
-    ],
-    faqs: [
-      {
-        question: 'Anten arızası nasıl tespit edilir?',
-        answer: 'Arıza tespiti için özel cihazlar kullanılarak sinyal ölçümü yapılmaktadır.'
-      },
-      {
-        question: 'Anten bakımı ne sıklıkla yapılmalıdır?',
-        answer: 'Yılda en az bir kez anten bakımı yapılması önerilmektedir.'
-      }
-    ]
-  },
-  'uydu-ayarlama': {
-    title: 'Uydu Ayarlama',
-    description: 'Uydu anten kurulumu ve kanal ayarlama hizmetleri',
-    features: [
-      'Uydu anten kurulumu',
-      'Kanal ayarlama',
-      'Çoklu uydu kurulumu',
-      'HD kanal ayarları',
-      'Uydu alıcı kurulumu'
-    ],
-    faqs: [
-      {
-        question: 'Uydu anteni hangi yöne bakmalıdır?',
-        answer: 'Türkiye\'de genellikle güney yönüne bakmalıdır, ancak konuma göre değişiklik gösterebilir.'
-      },
-      {
-        question: 'Kanal ayarları ne kadar sürede yapılır?',
-        answer: 'Kanal ayarları genellikle 30-60 dakika içinde tamamlanmaktadır.'
-      }
-    ]
-  }
-};
-</script> 
+</script>

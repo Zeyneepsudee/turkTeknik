@@ -176,7 +176,7 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
 import { Link } from '@inertiajs/vue3';
 import SEO from '@/components/SEO.vue';
 import TopBar from '@/components/TopBar.vue';

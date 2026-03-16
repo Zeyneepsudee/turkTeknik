@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import AppLayout from '@/layouts/AppLayout.vue';
-import { Head, useForm } from '@inertiajs/vue3';
+import { useForm } from '@inertiajs/vue3';
 import SEO from '@/components/SEO.vue';
 import { ref } from 'vue';
 import { Button } from '@/components/ui/button';
