@@ -3,8 +3,5 @@ node_modules/
 .output/
 dist/
 .env
-.env.local
 .DS_Store
 *.log
-.vscode/
-.idea/
