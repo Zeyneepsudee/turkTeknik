@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-slate-900 flex flex-col pt-24 pb-12 px-4">
+  <div class="min-h-screen bg-slate-900 flex flex-col pt-24 pb-12 px-4">
     <TopBar />
 
     <!-- SEO Meta -->
@@ -49,7 +49,7 @@
 
       <!-- Hizmet Kartları -->
       <div class="mb-16">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+        <h2 class="text-2xl font-bold text-white mb-8 text-center">
           {{ district.name }}'da Verdiğimiz Hizmetler
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6">
@@ -57,16 +57,16 @@
             v-for="service in services"
             :key="service.slug"
             :href="route(service.route)"
-            class="group bg-white dark:bg-slate-800 rounded-3xl p-7 border border-gray-100 dark:border-slate-700 hover:border-blue-400/40 hover:shadow-lg transition-all duration-300 flex flex-col items-start gap-4"
+            class="group bg-slate-800 rounded-3xl p-7 border border-slate-700 hover:border-blue-400/40 hover:shadow-lg transition-all duration-300 flex flex-col items-start gap-4"
           >
             <div :class="['w-14 h-14 rounded-2xl flex items-center justify-center text-2xl', service.bg]">
               <i :class="[service.icon, service.color]"></i>
             </div>
             <div>
-              <h3 class="text-base font-bold text-gray-900 dark:text-white group-hover:text-blue-500 transition-colors mb-1">
+              <h3 class="text-base font-bold text-white group-hover:text-blue-500 transition-colors mb-1">
                 {{ district.name }} {{ service.name }}
               </h3>
-              <p class="text-sm text-gray-500 dark:text-slate-400 leading-relaxed">{{ service.desc }}</p>
+              <p class="text-sm text-slate-400 leading-relaxed">{{ service.desc }}</p>
             </div>
             <span class="mt-auto text-xs font-semibold text-blue-500 flex items-center gap-1">
               Detaylı Bilgi <i class="fas fa-arrow-right text-[10px]"></i>
@@ -76,8 +76,8 @@
       </div>
 
       <!-- Neden Biz -->
-      <div class="bg-white dark:bg-slate-800 rounded-3xl p-10 md:p-14 border border-gray-100 dark:border-slate-700 mb-16">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white mb-8 text-center">
+      <div class="bg-slate-800 rounded-3xl p-10 md:p-14 border border-slate-700 mb-16">
+        <h2 class="text-2xl font-bold text-white mb-8 text-center">
           Neden {{ district.name }} İçin TürkTeknik?
         </h2>
         <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
@@ -86,8 +86,8 @@
               <i :class="[reason.icon, 'text-blue-500']"></i>
             </div>
             <div>
-              <p class="font-bold text-gray-900 dark:text-white text-sm mb-1">{{ reason.title }}</p>
-              <p class="text-gray-500 dark:text-slate-400 text-sm leading-relaxed">{{ reason.desc }}</p>
+              <p class="font-bold text-white text-sm mb-1">{{ reason.title }}</p>
+              <p class="text-slate-400 text-sm leading-relaxed">{{ reason.desc }}</p>
             </div>
           </div>
         </div>
@@ -95,25 +95,25 @@
 
       <!-- SSS -->
       <div class="max-w-3xl mx-auto mb-16">
-        <h2 class="text-2xl font-bold text-gray-900 dark:text-white text-center mb-8">
+        <h2 class="text-2xl font-bold text-white text-center mb-8">
           {{ district.name }} İçin Sıkça Sorulan Sorular
         </h2>
         <div class="space-y-4">
           <div
             v-for="(faq, i) in faqs"
             :key="i"
-            class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-700 overflow-hidden"
+            class="bg-slate-800 rounded-2xl border border-slate-700 overflow-hidden"
           >
             <button
               @click="openFaq = openFaq === i ? null : i"
               class="w-full px-6 py-5 text-left flex justify-between items-center group"
             >
-              <span class="font-bold text-gray-700 dark:text-slate-200 text-sm group-hover:text-blue-500 transition-colors">
+              <span class="font-bold text-slate-200 text-sm group-hover:text-blue-500 transition-colors">
                 {{ faq.q.replace('{district}', district.name) }}
               </span>
               <i :class="['fas fa-chevron-down text-slate-400 text-xs transition-transform', openFaq === i ? 'rotate-180' : '']"></i>
             </button>
-            <div v-if="openFaq === i" class="px-6 pb-5 text-gray-500 dark:text-slate-400 text-sm leading-relaxed border-t border-gray-50 dark:border-slate-700 pt-4">
+            <div v-if="openFaq === i" class="px-6 pb-5 text-slate-400 text-sm leading-relaxed border-t border-slate-700 pt-4">
               {{ faq.a.replace('{district}', district.name) }}
             </div>
           </div>
@@ -122,7 +122,7 @@
 
       <!-- Diğer İlçeler -->
       <div class="mb-8">
-        <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-5 text-center">
+        <h2 class="text-xl font-bold text-white mb-5 text-center">
           İzmir'de Hizmet Verdiğimiz Diğer İlçeler
         </h2>
         <div class="flex flex-wrap gap-3 justify-center">
@@ -130,7 +130,7 @@
             v-for="d in otherDistricts"
             :key="d.slug"
             :href="`/izmir/${d.slug}`"
-            class="px-4 py-2 bg-white dark:bg-slate-800 border border-gray-200 dark:border-slate-700 rounded-xl text-sm font-medium text-gray-700 dark:text-slate-300 hover:border-blue-400 hover:text-blue-500 transition"
+            class="px-4 py-2 bg-slate-800 border border-slate-700 rounded-xl text-sm font-medium text-slate-300 hover:border-blue-400 hover:text-blue-500 transition"
           >
             {{ d.name }}
           </Link>
@@ -140,8 +140,10 @@
     </div>
 
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/905469118061" target="_blank" class="fixed bottom-8 right-8 bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50">
-      <i class="fab fa-whatsapp text-3xl"></i>
+    <a href="https://wa.me/905469118061" target="_blank" rel="noopener noreferrer"
+       class="float-wp fixed bottom-6 right-6 w-11 h-11 rounded-full flex items-center justify-center z-50"
+       aria-label="WhatsApp ile İletişim">
+      <i class="fab fa-whatsapp text-2xl text-white"></i>
     </a>
   </div>
 </template>
@@ -323,3 +325,12 @@ const faqs = [
   },
 ];
 </script>
+
+<style scoped>
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+.float-wp { background:#25d366; box-shadow:0 4px 16px rgba(37,211,102,0.5); animation: float-bob 2.8s ease-in-out infinite; }
+.float-wp:hover { animation: none; transform:scale(1.12); box-shadow:0 6px 24px rgba(37,211,102,0.65); }
+</style>

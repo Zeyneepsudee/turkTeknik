@@ -29,6 +29,13 @@
               İzmir'de fiber ve VDSL arıza tespitinden, evinizin her köşesinde tam çeken Mesh Wi-Fi sistemlerine kadar internet altyapınızı profesyonellerle optimize edin.
             </p>
             <div class="flex flex-wrap justify-center md:justify-start gap-4">
+              <a
+                href="tel:+905469118061"
+                class="bg-blue-500 hover:bg-blue-400 text-white px-8 py-4 rounded-2xl font-bold text-base shadow-xl shadow-blue-500/20 transition transform active:scale-95 flex items-center gap-3"
+              >
+                <i class="fas fa-phone text-sm"></i>
+                Hemen Ara
+              </a>
               <Link 
                 :href="route('service-requests.create', { service: 'internet' })"
                 class="bg-blue-600 hover:bg-blue-700 text-white px-8 py-4 rounded-2xl font-bold text-base shadow-xl shadow-blue-500/20 transition transform active:scale-95 flex items-center gap-3"
@@ -81,11 +88,11 @@
         <h2 class="text-3xl font-bold text-gray-900 dark:text-white text-center mb-10">Sıkça Sorulan Sorular</h2>
         <div class="space-y-4">
           <div v-for="(faq, index) in faqs" :key="index" class="bg-white dark:bg-slate-800 rounded-2xl border border-gray-100 dark:border-slate-800 overflow-hidden">
-            <button class="w-full px-6 py-5 text-left flex justify-between items-center group">
+            <button @click="openFaqIndex = openFaqIndex === index ? null : index" class="w-full px-6 py-5 text-left flex justify-between items-center group">
               <span class="font-bold text-gray-700 dark:text-slate-300 group-hover:text-blue-500 transition-colors">{{ faq.question }}</span>
-              <i class="fas fa-chevron-down text-slate-500 text-xs"></i>
+              <i class="fas fa-chevron-down text-slate-500 text-xs transition-transform duration-300" :class="{ 'rotate-180': openFaqIndex === index }"></i>
             </button>
-            <div class="px-6 pb-5 text-gray-500 dark:text-slate-400 text-sm leading-relaxed border-t border-gray-50 dark:border-slate-700/50 pt-4">
+            <div v-show="openFaqIndex === index" class="px-6 pb-5 text-gray-500 dark:text-slate-400 text-sm leading-relaxed border-t border-gray-50 dark:border-slate-700/50 pt-4">
               {{ faq.answer }}
             </div>
           </div>
@@ -94,17 +101,22 @@
     </div>
     
     <!-- WhatsApp Floating Button -->
-    <a href="https://wa.me/905469118061" target="_blank" class="fixed bottom-8 right-8 bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50">
-      <i class="fab fa-whatsapp text-3xl"></i>
+    <a href="https://wa.me/905469118061" target="_blank" rel="noopener noreferrer"
+       class="float-wp fixed bottom-6 right-6 text-white w-11 h-11 rounded-full flex items-center justify-center z-50"
+       aria-label="WhatsApp ile İletişim">
+      <i class="fab fa-whatsapp text-2xl"></i>
     </a>
   </div>
 </template>
 
 <script setup lang="ts">
+import { ref } from 'vue';
 import { Link } from '@inertiajs/vue3';
 import { useHead } from '@vueuse/head';
 import SEO from '@/components/SEO.vue';
 import TopBar from '@/components/TopBar.vue';
+
+const openFaqIndex = ref<number | null>(null);
 
 useHead({
   script: [
@@ -185,7 +197,7 @@ const features = [
   {
     title: 'Modem & Kurulum',
     description: 'Yeni nesil modemlerinizin kurulumu, yazılım güncellemeleri ve güvenli şifreleme ayarları ile baştan sona yapılandırma sağlıyoruz.',
-    icon: 'fas fa-mighty-mouse'
+    icon: 'fas fa-ethernet'
   },
   {
     title: 'Mesh Wi-Fi Çözümleri',
@@ -224,3 +236,12 @@ const faqs = [
   }
 ];
 </script>
+
+<style scoped>
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+.float-wp { background:#25d366; box-shadow:0 4px 16px rgba(37,211,102,0.5); animation: float-bob 2.8s ease-in-out infinite; }
+.float-wp:hover { animation: none; transform:scale(1.12); box-shadow:0 6px 24px rgba(37,211,102,0.65); }
+</style>

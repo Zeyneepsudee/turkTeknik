@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-slate-900 flex flex-col pt-24 pb-12 px-4 overflow-hidden">
+  <div class="min-h-screen bg-slate-900 flex flex-col pt-24 pb-12 px-4 overflow-hidden">
     <TopBar />
     <SEO
       title="Hizmetlerimiz | TürkTeknik"
@@ -10,8 +10,8 @@
     <div class="max-w-6xl mx-auto w-full flex-grow flex flex-col justify-center items-center">
       <!-- Compact Header -->
       <div class="mb-6 text-center">
-        <h1 class="text-2xl md:text-3xl font-extrabold text-gray-900 dark:text-white mb-1 tracking-tight">Hizmetlerimiz</h1>
-        <p class="text-gray-500 dark:text-gray-400 text-xs md:text-sm font-medium leading-relaxed">
+        <h1 class="text-2xl md:text-3xl font-extrabold text-white mb-1 tracking-tight">Hizmetlerimiz</h1>
+        <p class="text-gray-400 text-xs md:text-sm font-medium leading-relaxed">
           Tüm teknik servis ihtiyaçlarınız için profesyonel ve garantili çözümler.
         </p>
       </div>
@@ -21,7 +21,7 @@
         <div
           v-for="service in services"
           :key="service.slug"
-          class="group bg-white dark:bg-slate-800 rounded-3xl p-5 border border-gray-100 dark:border-slate-700/50 hover:border-blue-500/30 dark:hover:border-blue-400/30 transition-all duration-300 relative overflow-hidden shadow-sm hover:shadow-xl flex flex-col h-full"
+          class="group bg-slate-800 rounded-3xl p-5 border border-slate-700/50 hover:border-blue-400/30 transition-all duration-300 relative overflow-hidden shadow-sm hover:shadow-xl flex flex-col h-full"
         >
           <div class="relative z-10 flex flex-col h-full">
             <!-- Header: Icon + Title (Flex Row) -->
@@ -32,7 +32,7 @@
               ]">
                 <i :class="[service.icon, service.iconColor]" class="text-xl"></i>
               </div>
-              <h2 class="text-lg font-bold text-gray-900 dark:text-white leading-tight">
+              <h2 class="text-lg font-bold text-white leading-tight">
                 {{ service.title }}
               </h2>
             </div>
@@ -44,8 +44,8 @@
                 :key="fIndex"
                 class="flex items-start gap-2.5 group/item"
               >
-                <span class="text-blue-500 dark:text-blue-400 flex-shrink-0 mt-0.5 text-xs">✓</span>
-                <span class="text-[13px] font-medium text-gray-500 dark:text-gray-400 group-hover/item:text-gray-900 dark:group-hover/item:text-gray-200 transition-colors">
+                <span class="text-blue-400 flex-shrink-0 mt-0.5 text-xs">✓</span>
+                <span class="text-[13px] font-medium text-gray-400 group-hover/item:text-gray-200 transition-colors">
                   {{ feature }}
                 </span>
               </li>
@@ -68,7 +68,7 @@
                   service.slug === 'elektrik-servisi' ? route('services.elektrik') :
                   route('services.show', service.slug)
                 "
-                class="flex-1 bg-gray-50 dark:bg-slate-700/50 text-gray-700 dark:text-gray-300 py-2 px-4 rounded-xl font-bold text-[12px] border border-gray-100 dark:border-slate-700 hover:bg-gray-100 dark:hover:bg-slate-700 transition-all flex items-center justify-center"
+                class="flex-1 bg-slate-700/50 text-gray-300 py-2 px-4 rounded-xl font-bold text-[12px] border border-slate-700 hover:bg-slate-700 transition-all flex items-center justify-center"
               >
                 Detaylı Bilgi
               </Link>
@@ -80,16 +80,16 @@
       <!-- Compact Trust Bar -->
       <div class="mt-10 flex flex-wrap justify-center gap-6 text-center opacity-70">
         <div class="flex items-center gap-2">
-          <i class="fas fa-shield-alt text-blue-600 dark:text-blue-400 text-xs text-center"></i>
-          <span class="text-[10px] font-bold text-gray-900 dark:text-white uppercase tracking-widest text-center">Garantili Hizmet</span>
+          <i class="fas fa-shield-alt text-blue-400 text-xs text-center"></i>
+          <span class="text-[10px] font-bold text-white uppercase tracking-widest text-center">Garantili Hizmet</span>
         </div>
         <div class="flex items-center gap-2">
-          <i class="fas fa-clock text-emerald-600 dark:text-emerald-400 text-xs text-center"></i>
-          <span class="text-[10px] font-bold text-gray-900 dark:text-white uppercase tracking-widest text-center">Hızlı Müdahale</span>
+          <i class="fas fa-clock text-emerald-400 text-xs text-center"></i>
+          <span class="text-[10px] font-bold text-white uppercase tracking-widest text-center">Hızlı Müdahale</span>
         </div>
         <div class="flex items-center gap-2">
-          <i class="fas fa-tools text-amber-600 dark:text-amber-400 text-xs text-center"></i>
-          <span class="text-[10px] font-bold text-gray-900 dark:text-white uppercase tracking-widest text-center">Orijinal Parça</span>
+          <i class="fas fa-tools text-amber-400 text-xs text-center"></i>
+          <span class="text-[10px] font-bold text-white uppercase tracking-widest text-center">Orijinal Parça</span>
         </div>
       </div>
     </div>
@@ -107,8 +107,8 @@ const services = [
     slug: 'internet-hizmetleri',
     serviceKey: 'internet',
     icon: 'fas fa-wifi',
-    iconBg: 'bg-blue-50 dark:bg-blue-900/20',
-    iconColor: 'text-blue-600 dark:text-blue-400',
+    iconBg: 'bg-blue-900/20',
+    iconColor: 'text-blue-400',
     features: [
       'Fiber, ADSL, VDSL Arıza Tespit ve Hat Analizi',
       'Modem / Router Kurulumu ve Yapılandırma',
@@ -125,8 +125,8 @@ const services = [
     slug: 'elektrik-servisi',
     serviceKey: 'elektrik',
     icon: 'fas fa-bolt',
-    iconBg: 'bg-amber-50 dark:bg-amber-900/20',
-    iconColor: 'text-amber-600 dark:text-amber-400',
+    iconBg: 'bg-amber-900/20',
+    iconColor: 'text-amber-400',
     features: [
       'Elektrik Tesisatı Arıza Tespit ve Onarımı',
       'Sigorta Panosu Kurulumu ve Bakımı',
@@ -143,8 +143,8 @@ const services = [
     slug: 'uydu-sistemleri',
     serviceKey: 'satellite',
     icon: 'fas fa-satellite-dish',
-    iconBg: 'bg-emerald-50 dark:bg-emerald-900/20',
-    iconColor: 'text-emerald-600 dark:text-emerald-400',
+    iconBg: 'bg-emerald-900/20',
+    iconColor: 'text-emerald-400',
     features: [
       'Çanak Anten Kurulum ve Yön Ayarı',
       'Merkezi Uydu Sistemi Kurulumu (SMATV)',
@@ -161,8 +161,8 @@ const services = [
     slug: 'kamera-sistemleri',
     serviceKey: 'camera',
     icon: 'fas fa-video',
-    iconBg: 'bg-indigo-50 dark:bg-indigo-900/20',
-    iconColor: 'text-indigo-600 dark:text-indigo-400',
+    iconBg: 'bg-indigo-900/20',
+    iconColor: 'text-indigo-400',
     features: [
       'IP ve AHD Güvenlik Kamera Kurulumu',
       'Mekanlar İçin Kamera Projelendirme',

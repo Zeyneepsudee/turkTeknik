@@ -1,5 +1,5 @@
 <template>
-  <div class="min-h-screen bg-gray-50 dark:bg-slate-900 flex flex-col pt-24 pb-16 px-4">
+  <div class="min-h-screen bg-slate-900 flex flex-col pt-24 pb-16 px-4">
     <TopBar />
 
     <SEO
@@ -12,12 +12,12 @@
     <div class="max-w-5xl mx-auto w-full flex-grow">
 
       <!-- Breadcrumb -->
-      <nav class="flex items-center gap-2 text-sm text-gray-500 dark:text-slate-400 mb-8" aria-label="Breadcrumb">
+      <nav class="flex items-center gap-2 text-sm text-slate-400 mb-8" aria-label="Breadcrumb">
         <Link href="/" class="hover:text-blue-500 transition-colors">Ana Sayfa</Link>
         <i class="fas fa-chevron-right text-[10px]"></i>
         <Link href="/rehberler" class="hover:text-blue-500 transition-colors">Rehberler</Link>
         <i class="fas fa-chevron-right text-[10px]"></i>
-        <span class="text-gray-700 dark:text-slate-300 font-medium truncate">{{ guide.title }}</span>
+        <span class="text-slate-300 font-medium truncate">{{ guide.title }}</span>
       </nav>
 
       <div class="grid grid-cols-1 lg:grid-cols-[1fr_300px] gap-8">
@@ -26,7 +26,7 @@
         <article>
 
           <!-- Article Header -->
-          <div class="bg-white dark:bg-slate-800 rounded-3xl border border-gray-100 dark:border-slate-700 p-8 mb-6">
+          <div class="bg-slate-800 rounded-3xl border border-slate-700 p-8 mb-6">
             <div class="flex items-center gap-3 mb-5">
               <div :class="['w-12 h-12 rounded-2xl flex items-center justify-center flex-shrink-0', `bg-${guide.color}-500/10`]">
                 <i :class="[guide.icon, `text-${guide.color}-500`, 'text-2xl']"></i>
@@ -35,10 +35,10 @@
                 {{ categoryLabel }}
               </span>
             </div>
-            <h1 class="text-2xl md:text-4xl font-extrabold text-gray-900 dark:text-white mb-5 leading-tight">
+            <h1 class="text-2xl md:text-4xl font-extrabold text-white mb-5 leading-tight">
               {{ guide.title }}
             </h1>
-            <p class="text-gray-600 dark:text-slate-300 text-lg leading-relaxed">
+            <p class="text-slate-300 text-lg leading-relaxed">
               {{ guide.intro }}
             </p>
           </div>
@@ -48,13 +48,13 @@
             <div
               v-for="(section, i) in guide.sections"
               :key="i"
-              class="bg-white dark:bg-slate-800 rounded-3xl border border-gray-100 dark:border-slate-700 p-7"
+              class="bg-slate-800 rounded-3xl border border-slate-700 p-7"
             >
-              <h2 class="text-lg font-bold text-gray-900 dark:text-white mb-4 flex items-center gap-2">
+              <h2 class="text-lg font-bold text-white mb-4 flex items-center gap-2">
                 <span :class="[`bg-${guide.color}-500`, 'w-1.5 h-6 rounded-full flex-shrink-0']"></span>
                 {{ section.heading }}
               </h2>
-              <p class="text-gray-600 dark:text-slate-300 leading-relaxed mb-4">
+              <p class="text-slate-300 leading-relaxed mb-4">
                 {{ section.content }}
               </p>
               <!-- Tips -->
@@ -62,7 +62,7 @@
                 <div
                   v-for="(tip, ti) in section.tips"
                   :key="ti"
-                  class="flex items-start gap-2 text-sm text-gray-500 dark:text-slate-400 bg-gray-50 dark:bg-slate-700/50 rounded-xl px-4 py-3"
+                  class="flex items-start gap-2 text-sm text-slate-400 bg-slate-700/50 rounded-xl px-4 py-3"
                 >
                   <i :class="[`text-${guide.color}-400`, 'fas fa-lightbulb flex-shrink-0 mt-0.5 text-xs']"></i>
                   <span>{{ tip }}</span>
@@ -72,24 +72,24 @@
           </div>
 
           <!-- FAQ Section -->
-          <div class="bg-white dark:bg-slate-800 rounded-3xl border border-gray-100 dark:border-slate-700 p-8 mb-6">
-            <h2 class="text-xl font-bold text-gray-900 dark:text-white mb-6">Sıkça Sorulan Sorular</h2>
+          <div class="bg-slate-800 rounded-3xl border border-slate-700 p-8 mb-6">
+            <h2 class="text-xl font-bold text-white mb-6">Sıkça Sorulan Sorular</h2>
             <div class="space-y-4">
               <div
                 v-for="(faq, fi) in guide.faqs"
                 :key="fi"
-                class="border border-gray-100 dark:border-slate-700 rounded-2xl overflow-hidden"
+                class="border border-slate-700 rounded-2xl overflow-hidden"
               >
                 <button
                   @click="openFaq = openFaq === fi ? null : fi"
                   class="w-full px-5 py-4 text-left flex justify-between items-center group"
                 >
-                  <span class="font-semibold text-gray-800 dark:text-slate-200 text-sm group-hover:text-blue-500 transition-colors pr-4">
+                  <span class="font-semibold text-slate-200 text-sm group-hover:text-blue-500 transition-colors pr-4">
                     {{ faq.q }}
                   </span>
                   <i :class="['fas fa-chevron-down text-slate-400 text-xs transition-transform flex-shrink-0', openFaq === fi ? 'rotate-180' : '']"></i>
                 </button>
-                <div v-if="openFaq === fi" class="px-5 pb-5 pt-1 text-gray-500 dark:text-slate-400 text-sm leading-relaxed border-t border-gray-50 dark:border-slate-700">
+                <div v-if="openFaq === fi" class="px-5 pb-5 pt-1 text-slate-400 text-sm leading-relaxed border-t border-slate-700">
                   {{ faq.a }}
                 </div>
               </div>
@@ -128,8 +128,8 @@
         <aside class="hidden lg:block">
 
           <!-- Quick Contact -->
-          <div class="bg-white dark:bg-slate-800 rounded-3xl border border-gray-100 dark:border-slate-700 p-6 mb-5 sticky top-28">
-            <h3 class="font-bold text-gray-900 dark:text-white mb-4 text-sm">Hızlı Destek</h3>
+          <div class="bg-slate-800 rounded-3xl border border-slate-700 p-6 mb-5 sticky top-28">
+            <h3 class="font-bold text-white mb-4 text-sm">Hızlı Destek</h3>
             <a
               href="tel:+905469118061"
               class="flex items-center gap-3 bg-blue-600 hover:bg-blue-700 text-white px-5 py-3 rounded-2xl font-semibold text-sm transition mb-3"
@@ -147,20 +147,20 @@
             </a>
             <Link
               :href="route('service-requests.create')"
-              class="flex items-center gap-3 bg-slate-100 dark:bg-slate-700 hover:bg-slate-200 dark:hover:bg-slate-600 text-gray-700 dark:text-slate-200 px-5 py-3 rounded-2xl font-semibold text-sm transition"
+              class="flex items-center gap-3 bg-slate-700 hover:bg-slate-600 text-slate-200 px-5 py-3 rounded-2xl font-semibold text-sm transition"
             >
               <i class="fas fa-clipboard-list text-blue-500"></i>
               <span>Servis Talebi</span>
             </Link>
 
-            <div class="mt-5 pt-5 border-t border-gray-100 dark:border-slate-700 text-xs text-gray-400 text-center leading-relaxed">
+            <div class="mt-5 pt-5 border-t border-slate-700 text-xs text-gray-400 text-center leading-relaxed">
               Aynı gün servis · Garantili işçilik · İzmir geneli
             </div>
           </div>
 
           <!-- Related Guides -->
-          <div v-if="related.length" class="bg-white dark:bg-slate-800 rounded-3xl border border-gray-100 dark:border-slate-700 p-6">
-            <h3 class="font-bold text-gray-900 dark:text-white mb-4 text-sm">İlgili Rehberler</h3>
+          <div v-if="related.length" class="bg-slate-800 rounded-3xl border border-slate-700 p-6">
+            <h3 class="font-bold text-white mb-4 text-sm">İlgili Rehberler</h3>
             <div class="space-y-3">
               <Link
                 v-for="r in related"
@@ -171,7 +171,7 @@
                 <div :class="['w-9 h-9 rounded-xl flex items-center justify-center flex-shrink-0', `bg-${r.color}-500/10`]">
                   <i :class="[r.icon, `text-${r.color}-500`, 'text-sm']"></i>
                 </div>
-                <span class="text-sm text-gray-600 dark:text-slate-300 group-hover:text-blue-500 transition-colors leading-snug">
+                <span class="text-sm text-slate-300 group-hover:text-blue-500 transition-colors leading-snug">
                   {{ r.title }}
                 </span>
               </Link>
@@ -184,8 +184,10 @@
     </div>
 
     <!-- WhatsApp Floating -->
-    <a href="https://wa.me/905469118061" target="_blank" class="fixed bottom-8 right-8 bg-emerald-500 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-transform z-50">
-      <i class="fab fa-whatsapp text-3xl"></i>
+    <a href="https://wa.me/905469118061" target="_blank" rel="noopener noreferrer"
+       class="float-wp fixed bottom-6 right-6 w-11 h-11 rounded-full flex items-center justify-center z-50"
+       aria-label="WhatsApp ile İletişim">
+      <i class="fab fa-whatsapp text-2xl text-white"></i>
     </a>
   </div>
 </template>
@@ -294,3 +296,12 @@ useHead(computed(() => ({
   ],
 })));
 </script>
+
+<style scoped>
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+.float-wp { background:#25d366; box-shadow:0 4px 16px rgba(37,211,102,0.5); animation: float-bob 2.8s ease-in-out infinite; }
+.float-wp:hover { animation: none; transform:scale(1.12); box-shadow:0 6px 24px rgba(37,211,102,0.65); }
+</style>

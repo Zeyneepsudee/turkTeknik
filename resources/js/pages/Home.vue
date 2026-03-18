@@ -124,7 +124,7 @@ const featuredGuides = [
   {
     title: 'ZTE Modem Kurulumu',
     desc: 'PPPoE ayarı, Wi-Fi şifre ve optimizasyon',
-    icon: 'fas fa-router',
+    icon: 'fas fa-ethernet',
     iconColor: 'text-blue-400',
     bg: 'bg-blue-500/10',
     href: '/rehberler/zte-modem-kurulumu',
@@ -389,24 +389,32 @@ watch(() => page.props.flash?.success, (newVal) => {
     <!-- Notification -->
     <NotificationCard />
 
-    <!-- Fixed Contact Buttons -->
-    <div class="fixed bottom-6 right-6 z-50 flex flex-col space-y-3">
-      <a
-        href="https://wa.me/905469118061?text=Merhaba! TürkTeknik hizmetleri hakkında bilgi almak istiyorum."
-        target="_blank"
-        rel="noopener noreferrer"
-        class="bg-green-500 hover:bg-green-600 text-white w-14 h-14 rounded-full flex items-center justify-center shadow-2xl hover:scale-110 transition-all animate-bounce"
-        title="WhatsApp ile İletişim"
-      >
-        <i class="fab fa-whatsapp text-2xl"></i>
-      </a>
-    </div>
+    <!-- WhatsApp Floating -->
+    <a
+      href="https://wa.me/905469118061?text=Merhaba! TürkTeknik hizmetleri hakkında bilgi almak istiyorum."
+      target="_blank"
+      rel="noopener noreferrer"
+      class="fixed bottom-6 right-6 z-50 text-white w-11 h-11 rounded-full flex items-center justify-center float-wp"
+      aria-label="WhatsApp ile İletişim"
+    >
+      <i class="fab fa-whatsapp text-2xl"></i>
+    </a>
   </div>
 </template>
 
 <style scoped>
-@keyframes spin-slow {
-  from { transform: rotate(0deg); }
-  to { transform: rotate(360deg); }
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+.float-wp {
+  background: #25d366;
+  box-shadow: 0 4px 16px rgba(37,211,102,0.5);
+  animation: float-bob 2.8s ease-in-out infinite;
+}
+.float-wp:hover {
+  animation: none;
+  transform: scale(1.12);
+  box-shadow: 0 6px 24px rgba(37,211,102,0.65);
 }
 </style>
