@@ -116,10 +116,29 @@ const next = () => goTo(current.value + 1, 'next')
 const prev = () => goTo(current.value - 1, 'prev')
 
 const startAutoplay = () => {
-  autoplayInterval.value = setInterval(next, 5500)
+  autoplayInterval.value = setInterval(next, 4000)
 }
 const stopAutoplay = () => {
   if (autoplayInterval.value) clearInterval(autoplayInterval.value)
+}
+
+// Touch / swipe support
+const touchStartX = ref(0)
+const touchEndX = ref(0)
+
+const onTouchStart = (e: TouchEvent) => {
+  touchStartX.value = e.changedTouches[0].screenX
+}
+const onTouchEnd = (e: TouchEvent) => {
+  touchEndX.value = e.changedTouches[0].screenX
+  const diff = touchStartX.value - touchEndX.value
+  if (Math.abs(diff) > 40) {
+    if (diff > 0) {
+      next()
+    } else {
+      prev()
+    }
+  }
 }
 
 onMounted(startAutoplay)
@@ -131,6 +150,8 @@ onUnmounted(stopAutoplay)
     class="relative min-h-[90vh] lg:min-h-screen overflow-hidden"
     @mouseenter="stopAutoplay"
     @mouseleave="startAutoplay"
+    @touchstart="onTouchStart"
+    @touchend="onTouchEnd"
   >
     <!-- Background slides -->
     <TransitionGroup name="slide-fade">
@@ -289,9 +310,9 @@ onUnmounted(stopAutoplay)
       </TransitionGroup>
     </div>
 
-    <!-- Navigation arrows -->
+    <!-- Navigation arrows (hidden on mobile, visible on md+) -->
     <button
-      class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-white hover:bg-white/15 hover:border-white/30 transition-all duration-200 backdrop-blur-sm"
+      class="absolute left-4 md:left-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full hidden md:flex items-center justify-center bg-white/5 border border-white/10 text-white hover:bg-white/15 hover:border-white/30 transition-all duration-200 backdrop-blur-sm"
       @click="prev"
     >
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -299,7 +320,7 @@ onUnmounted(stopAutoplay)
       </svg>
     </button>
     <button
-      class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full flex items-center justify-center bg-white/5 border border-white/10 text-white hover:bg-white/15 hover:border-white/30 transition-all duration-200 backdrop-blur-sm"
+      class="absolute right-4 md:right-8 top-1/2 -translate-y-1/2 z-20 w-12 h-12 rounded-full hidden md:flex items-center justify-center bg-white/5 border border-white/10 text-white hover:bg-white/15 hover:border-white/30 transition-all duration-200 backdrop-blur-sm"
       @click="next"
     >
       <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

@@ -68,9 +68,9 @@ const toggleMobile = (key: string) => {
           </div>
           <div class="flex flex-col leading-tight">
             <span class="text-white font-bold text-base tracking-wide">TürkTeknik</span>
-            <span class="text-[#00b4ff] text-[10px] font-bold tracking-tight flex items-center gap-1">
+            <a href="tel:+905469118061" class="text-[#00b4ff] text-[10px] font-bold tracking-tight flex items-center gap-1 hover:text-[#33c6ff] transition-colors" @click.stop>
               <i class="fas fa-phone text-[8px]"></i> 0546 911 80 61
-            </span>
+            </a>
           </div>
         </Link>
 
@@ -337,4 +337,33 @@ const toggleMobile = (key: string) => {
       </div>
     </Transition>
   </nav>
+
+  <!-- ── FLOATING PHONE BUTTON (blue, above WP icon) ── -->
+  <a
+    href="tel:+905469118061"
+    aria-label="Hemen Ara"
+    class="fixed right-6 z-50 w-11 h-11 rounded-full flex items-center justify-center phone-float-btn"
+    style="bottom: 4.5rem;"
+  >
+    <svg xmlns="http://www.w3.org/2000/svg" class="w-5 h-5 text-white" viewBox="0 0 24 24" fill="currentColor">
+      <path d="M6.6 10.8c1.4 2.8 3.8 5.1 6.6 6.6l2.2-2.2c.3-.3.7-.4 1-.2 1.1.4 2.3.6 3.6.6.6 0 1 .4 1 1V20c0 .6-.4 1-1 1C10.6 21 3 13.4 3 4c0-.6.4-1 1-1h3.5c.6 0 1 .4 1 1 0 1.3.2 2.5.6 3.6.1.3 0 .7-.2 1L6.6 10.8z"/>
+    </svg>
+  </a>
 </template>
+
+<style scoped>
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+.phone-float-btn {
+  background: #0ea5e9;
+  box-shadow: 0 4px 16px rgba(14,165,233,0.45);
+  animation: float-bob 2.8s ease-in-out infinite;
+}
+.phone-float-btn:hover {
+  animation: none;
+  transform: scale(1.12);
+  box-shadow: 0 6px 24px rgba(14,165,233,0.65);
+}
+</style>

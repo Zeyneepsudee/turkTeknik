@@ -170,8 +170,10 @@
     </div>
 
     <!-- WhatsApp -->
-    <a href="https://wa.me/905469118061" target="_blank" class="whatsapp-btn fixed bottom-8 right-8 w-14 h-14 rounded-full flex items-center justify-center z-50">
-      <i class="fab fa-whatsapp text-3xl text-white"></i>
+    <a href="https://wa.me/905469118061" target="_blank" rel="noopener noreferrer"
+       class="float-wp fixed bottom-6 right-6 w-11 h-11 rounded-full flex items-center justify-center z-50"
+       aria-label="WhatsApp ile İletişim">
+      <i class="fab fa-whatsapp text-2xl text-white"></i>
     </a>
   </div>
 </template>
@@ -384,8 +386,12 @@ const brands = ['Hikvision', 'Dahua', 'TP-Link', 'Huawei', 'ZTE', 'D-Link', 'Tü
 .cta-btn-fill:hover { filter:brightness(1.1); transform:translateY(-2px); }
 
 /* ── WhatsApp ─────────────────────────────────────── */
-.whatsapp-btn { background:#25d366; box-shadow:0 4px 20px rgba(37,211,102,0.4); transition:transform 0.2s, box-shadow 0.2s; }
-.whatsapp-btn:hover { transform:scale(1.12); box-shadow:0 6px 28px rgba(37,211,102,0.55); }
+@keyframes float-bob {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-6px); }
+}
+.float-wp { background:#25d366; box-shadow:0 4px 16px rgba(37,211,102,0.5); animation: float-bob 2.8s ease-in-out infinite; }
+.float-wp:hover { animation: none; transform:scale(1.12); box-shadow:0 6px 24px rgba(37,211,102,0.65); }
 
 /* ── Scroll reveal ────────────────────────────────── */
 [data-reveal] {
