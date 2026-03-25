@@ -56,7 +56,7 @@ class ServiceRequestController extends Controller
             'address' => 'required|string|max:255',
             'district' => 'nullable|string|max:255',
             'description' => 'nullable|string',
-            'service_key' => 'nullable|string|in:camera,internet,satellite,elektrik',
+            'service_key' => 'nullable|string',
             'service_id' => 'nullable|exists:services,id',
             'option_id' => 'nullable|string',
             'other_service_option' => 'required_if:option_id,other|nullable|string|max:255',
@@ -115,7 +115,7 @@ class ServiceRequestController extends Controller
         if (auth()->check()) {
             return redirect()->route('service-requests.show', $serviceRequest->id)->with('success', $successData);
         } else {
-            return redirect()->route('home')->with('success', $successData);
+            return redirect()->route('tesekkur')->with('success', $successData);
         }
     }
 

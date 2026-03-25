@@ -93,7 +93,12 @@ function goStep(n: Phase) {
 
 function submitForm() {
   form.post(route('service-requests.store'), {
-    onSuccess: () => { submitted.value = true },
+    onError: (errors) => {
+      console.error('Form submission errors:', errors);
+      if (errors.name || errors.phone || errors.address || errors.email || errors.district || errors.description) {
+        step.value = 2; // Geri dön ve hataları göster
+      }
+    }
   })
 }
 

@@ -92,6 +92,11 @@ Route::get('/iletisim', function () {
     return Inertia::render('Contact');
 })->name('contact');
 
+// Google Ads dönüşüm izleme için teşekkür sayfası
+Route::get('/tesekkur', function () {
+    return Inertia::render('Tesekkur');
+})->name('tesekkur');
+
 Route::post('/iletisim', function () {
     // Form verilerini işleme mantığı buraya gelecek
     // Örneğin: Mail gönderme, veritabanına kaydetme

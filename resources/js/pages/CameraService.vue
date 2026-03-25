@@ -2,10 +2,10 @@
   <div class="min-h-screen bg-gray-50 dark:bg-slate-900 flex flex-col pt-24 pb-12 px-4">
     <TopBar />
     <SEO
-      title="İzmir Güvenlik Kamera Sistemleri Kurulumu | TürkTeknik"
-      description="İzmir'de profesyonel güvenlik kamera kurulumu. IP ve AHD kamera sistemi montajı, DVR/NVR kurulumu, uzaktan mobil izleme. 7/24 teknik servis. Hemen arayın: 0546 911 80 61"
+      title="İzmir Güvenlik Kamerası Kurulumu | IP & AHD Kamera Sistemi | TürkTeknik"
+      description="İzmir'de ev ve iş yeri güvenlik kamerası kurulumu. IP kamera, AHD sistem, DVR/NVR montajı, mobil uzaktan izleme. Bornova, Buca, Karşıyaka, Konak, Çiğli ve tüm İzmir'e 7/24 servis. ☎ 0546 911 80 61"
       url="https://turkteknik.com.tr/hizmetler/kamera-sistemleri"
-      keywords="izmir güvenlik kamerası kurulumu, izmir kamera sistemi, ip kamera montajı izmir, dvr nvr kurulumu izmir, güvenlik kamerası tamiri izmir, kamera servisi izmir, türkteknik kamera"
+      keywords="izmir güvenlik kamerası kurulumu, izmir kamera sistemi, ip kamera montajı izmir, ahd kamera izmir, dvr nvr kurulumu izmir, güvenlik kamerası tamiri izmir, kamera servisi izmir, bornova güvenlik kamerası, buca kamera kurulumu, karşıyaka kamera sistemi, konak güvenlik kamerası, çiğli kamera montajı, gaziemir güvenlik kamerası, karabağlar kamera kurulumu, türkteknik kamera, izmir kamera tamiri"
     />
 
 

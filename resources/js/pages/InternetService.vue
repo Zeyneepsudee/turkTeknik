@@ -2,10 +2,10 @@
   <div class="min-h-screen bg-gray-50 dark:bg-slate-900 flex flex-col pt-24 pb-12 px-4">
     <TopBar />
     <SEO
-      title="İzmir İnternet Teknik Servis | Fiber & Wi-Fi Arıza | TürkTeknik"
-      description="İzmir'de internet arızası, yavaş bağlantı ve Wi-Fi problemi mi yaşıyorsunuz? Fiber/VDSL arıza tespiti, modem kurulumu, Mesh Wi-Fi ve Access Point çözümleri. 0546 911 80 61"
+      title="İzmir İnternet Arızası & Teknik Servis | Fiber, WiFi, Modem | TürkTeknik"
+      description="İzmir'de internet arızası, yavaş bağlantı, Wi-Fi problemi mi yaşıyorsunuz? Fiber/VDSL arıza tespiti, modem kurulumu, Mesh Wi-Fi sistemi. Bornova, Buca, Karşıyaka, Konak ve İzmir geneline aynı gün servis. ☎ 0546 911 80 61"
       url="https://turkteknik.com.tr/hizmetler/internet-hizmetleri"
-      keywords="izmir internet arızası, izmir wifi teknik servis, fiber internet arıza izmir, modem kurulumu izmir, mesh wifi izmir, internet hız sorunu izmir, türkteknik internet"
+      keywords="izmir internet arızası, izmir wifi teknik servis, fiber internet arıza izmir, modem kurulumu izmir, mesh wifi izmir, internet hız sorunu izmir, vdsl arızası izmir, bornova internet arızası, buca wifi sorunu, karşıyaka internet teknik servis, konak internet servisi, gaziemir internet arızası, izmir access point kurulumu, türkteknik internet, izmir internet hat tamiri"
     />
 
 

@@ -2,10 +2,10 @@
   <div class="min-h-screen bg-gray-50 dark:bg-slate-900 flex flex-col pt-24 pb-12 px-4">
     <TopBar />
     <SEO
-      title="İzmir Çanak Anten & Uydu Sistemi Kurulumu | TürkTeknik"
-      description="İzmir'de çanak anten montajı, merkezi uydu sistemi (SMATV), LNB değişimi ve sinyal güçlendirme hizmetleri. Yağmurda sinyal giden anten sorunları çözülür. 0546 911 80 61"
+      title="İzmir Çanak Anten Kurulumu & Uydu Servisi | Merkezi Sistem | TürkTeknik"
+      description="İzmir'de çanak anten montajı, merkezi uydu sistemi (SMATV), LNB değişimi, sinyal güçlendirme ve uydu arıza servisi. Bornova, Buca, Karşıyaka, Konak ve tüm İzmir ilçelerine aynı gün hizmet. ☎ 0546 911 80 61"
       url="https://turkteknik.com.tr/hizmetler/uydu-sistemleri"
-      keywords="izmir çanak anten kurulumu, izmir uydu servisi, çanak anten tamiri izmir, merkezi uydu sistemi izmir, sinyal güçlendirme izmir, lnb değişimi izmir, türkteknik uydu"
+      keywords="izmir çanak anten kurulumu, izmir uydu servisi, çanak anten tamiri izmir, merkezi uydu sistemi izmir, smatv izmir, sinyal güçlendirme izmir, lnb değişimi izmir, bornova çanak anten, buca uydu kurulumu, karşıyaka uydu servisi, konak çanak anten, çiğli uydu montajı, gaziemir çanak anten, türkteknik uydu, izmir uydu arızası"
     />
 
 

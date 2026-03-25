@@ -54,20 +54,20 @@ class SitemapController extends Controller
         // İlçe sayfaları (örn: /izmir/konak)
         foreach ($this->districtSlugs as $slug) {
             $urls[] = [
-                'loc'        => 'https://turkteknik.com.tr/izmir/' . $slug,
+                'loc' => 'https://turkteknik.com.tr/izmir/'.$slug,
                 'changefreq' => 'monthly',
-                'priority'   => '0.8',
-                'lastmod'    => $today,
+                'priority' => '0.8',
+                'lastmod' => $today,
             ];
         }
 
         // Rehber sayfaları (örn: /rehberler/zte-modem-kurulumu)
         foreach ($this->guideSlugs as $slug) {
             $urls[] = [
-                'loc'        => 'https://turkteknik.com.tr/rehberler/' . $slug,
+                'loc' => 'https://turkteknik.com.tr/rehberler/'.$slug,
                 'changefreq' => 'monthly',
-                'priority'   => '0.8',
-                'lastmod'    => $today,
+                'priority' => '0.8',
+                'lastmod' => $today,
             ];
         }
 

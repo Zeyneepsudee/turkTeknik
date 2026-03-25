@@ -86,10 +86,6 @@ function goStep(n: Phase) {
 
 function submitForm() {
   form.post(route('service-requests.store'), {
-    onSuccess: () => { 
-      submitted.value = true 
-      window.scrollTo({ top: 0, behavior: 'smooth' })
-    },
     onError: (errors) => {
       // Step 2 alanlarında hata varsa oraya geri dön
       if (errors.name || errors.phone || errors.address || errors.email || errors.district || errors.description) {

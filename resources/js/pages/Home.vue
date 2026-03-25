@@ -168,9 +168,9 @@ watch(() => page.props.flash?.success, (newVal) => {
 <template>
   <div>
     <SEO
-      title="İzmir Teknik Servis | İnternet, Kamera, Uydu, Elektrik | TürkTeknik"
-      description="İzmir'de teknik servis ihtiyaçlarınız için TürkTeknik. İnternet arızası, güvenlik kamerası kurulumu, çanak anten montajı ve elektrik tesisatı. 7/24 hizmet. ☎ 0546 911 80 61"
-      keywords="izmir teknik servis, izmir internet arızası, izmir güvenlik kamerası kurulumu, izmir çanak anten, izmir elektrik servisi, türkteknik izmir, izmir wifi teknik servis, teknik servis izmir"
+      title="İzmir Teknik Servis | Güvenlik Kamerası, Uydu, İnternet, Elektrik | TürkTeknik"
+      description="İzmir'de profesyonel teknik servis. Bornova, Buca, Karşıyaka, Konak ve tüm İzmir ilçelerine güvenlik kamerası kurulumu, çanak anten montajı, internet arızası ve elektrik hizmetleri. 7/24 servis ☎ 0546 911 80 61"
+      keywords="izmir teknik servis, izmir güvenlik kamerası kurulumu, izmir çanak anten kurulumu, izmir uydu servisi, izmir internet arızası, izmir elektrik servisi, bornova teknik servis, buca teknik servis, karşıyaka teknik servis, konak teknik servis, çiğli kamera kurulumu, gaziemir uydu servisi, türkteknik izmir, izmir kamera sistemi, izmir wifi kurulumu"
       url="https://turkteknik.com.tr"
     />
 
